@@ -2,6 +2,6 @@
   font-family: 'Baloo Tamma 2', cursive;
 }
 
-html, body {
+html, body, #root {
   height: 100%;
 }
