@@ -3,16 +3,17 @@
     height: 100%;
 }
 
-.image img{     
-    max-height: 300px ;
+.carousel-image {   
     width: 100%;
+    img{
+        height: 250px;
+        width: 100%;
+    }
 }
 
 .carousel-container{
     max-width: 100%;
-    padding: 0 20px;
+    padding: 10px 0px;
+    background-color: #B4B4B4;
 }
 
-.chevron{
-
-}

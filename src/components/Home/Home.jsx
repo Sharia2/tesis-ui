@@ -1,5 +1,9 @@
 import React, { Component } from "react"
+import { Stress } from "../index"
 import ItemsCarousel from 'react-items-carousel';
+import { Button, Col } from 'antd';
+import 'antd/dist/antd.css';
+import { RightOutlined, LeftOutlined} from '@ant-design/icons'
 import "./Home.scss"
 import image1 from "../../assets/1.jpg"
 import image2 from "../../assets/2.jpg"
@@ -9,7 +13,7 @@ import image4 from "../../assets/4.jpg"
 const images = [image1, image2, image3, image4];
 const finalImages = images.map(
     (image) =>
-        <div className="image">
+        <div className="carousel-image">
             <img src={image} />
         </div>
 )
@@ -17,15 +21,17 @@ const finalImages = images.map(
 class Home extends Component {
     state = {
         activeItemIndex: 0,
+        firstPage: true
     };
-    getInfo(index) {
-        if (index< 2) {
-            return "info1"
-        }else if (index>= 2 && index< 4) {
-            return "info2"
+    getInfo = (index) => {
+        const { firstPage } = this.state;
+        if (firstPage) {
+            return "infor1"
+        } else {
+            return <Stress />
         }
     }
-    changeActiveItem = (activeItemIndex) => this.setState({ activeItemIndex });
+    changeActiveItem = (activeItemIndex) => this.setState({ activeItemIndex, firstPage: !this.state.firstPage });
     render() {
         const {
             activeItemIndex,
@@ -48,9 +54,8 @@ class Home extends Component {
                         activePosition={'center'}
 
                         chevronWidth={24}
-                        rightChevron={<span className="chevron">{'>'}</span>}
-                        leftChevron={<span className="chevron">{'<'}</span>}
-                        outsideChevron
+                        rightChevron={<Button style={{position:'relative' ,right: '5px', paddingTop:'5px'}} type="default" shape="circle" icon={<RightOutlined />} />}
+                        leftChevron={<Button style={{ position: 'relative', left: '5px', paddingTop: '5px' }} type="default" shape="circle" icon={<LeftOutlined />} />}
                     >
                         {finalImages}
                     </ItemsCarousel>
