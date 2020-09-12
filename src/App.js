@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Nav, Footer, Home } from "./components"
+import { Nav, Footer, Home, Heatmap } from "./components"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
           Data
         </Route>
         <Route path="/GPS">
-          GPS
+          <Heatmap/>
         </Route>
         <Route path="/">
           <Home/>
