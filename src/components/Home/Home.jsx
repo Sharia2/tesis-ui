@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { Stress } from "../index"
 import ItemsCarousel from 'react-items-carousel';
-import { Button, Col } from 'antd';
+import { Button } from 'antd';
 import 'antd/dist/antd.css';
 import { RightOutlined, LeftOutlined} from '@ant-design/icons'
 import "./Home.scss"
@@ -9,29 +9,32 @@ import image1 from "../../assets/1.jpg"
 import image2 from "../../assets/2.jpg"
 import image3 from "../../assets/3.jpg"
 import image4 from "../../assets/4.jpg"
+import image5 from "../../assets/5.jpg"
+import image6 from "../../assets/6.jpg"
 
-const images = [image1, image2, image3, image4];
+const images = [image1, image2, image3, image4, image5, image6];
 const finalImages = images.map(
     (image) =>
         <div className="carousel-image">
-            <img src={image} />
+            <img src={image} alt="this images is not found" />
         </div>
 )
 
 class Home extends Component {
     state = {
-        activeItemIndex: 0,
-        firstPage: true
+        activeItemIndex: 1,
     };
     getInfo = (index) => {
-        const { firstPage } = this.state;
-        if (firstPage) {
-            return "infor1"
-        } else {
+        const { activeItemIndex} = this.state
+        if (activeItemIndex === 1) {
             return <Stress />
+        } else if(activeItemIndex === 3){
+            return "Informacion2"
+        } else {
+            return "Informacion3"
         }
     }
-    changeActiveItem = (activeItemIndex) => this.setState({ activeItemIndex, firstPage: !this.state.firstPage });
+    changeActiveItem = (activeItemIndex) => this.setState({ activeItemIndex });
     render() {
         const {
             activeItemIndex,
@@ -44,7 +47,7 @@ class Home extends Component {
             <div className="home-container">
                 <div className="carousel-container">
                     <ItemsCarousel
-                        infiniteLoop
+                        //infiniteLoop
                         numberOfCards={2}
                         gutter={12}
                         slidesToScroll={2}

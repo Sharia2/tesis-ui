@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import GoogleMapReact from 'google-map-react';
+import { Pin } from "../index"
 import "./Heatmap.scss"
 
 //AIzaSyDKqrFi2AW-g2mduIrTL3v4xL2Enc3X6aM
@@ -10,9 +11,14 @@ class Heatmap extends Component {
         center: { lat: 40.73, lng: -73.93 },
     };
     static defaultProps = {
-        center: { lat: 40.73, lng: -73.93 },
-        zoom: 12
+        center: { lat: 6.25113, lng: -75.57051166666666 },
+        zoom: 16.8
     };
+    componentDidMount(){
+        const latitud = this.props.gpsData.positions[this.props.gpsData.positions.length -1].lat
+        const longitud = this.props.gpsData.positions[this.props.gpsData.positions.length - 1].lng
+        this.setState({center: {lat: latitud , lng: longitud}})
+    }
     changeActive = (newActive) => { this.setState({ active: newActive }) };
     render() {
         const { active, center } = this.state
@@ -27,7 +33,7 @@ class Heatmap extends Component {
                     </div>
                 </div>
                 <div className="heatmap-container">
-                    <GoogleMapReact
+                    <GoogleMapReact                        
                         bootstrapURLKeys={{
                             key: "AIzaSyDKqrFi2AW-g2mduIrTL3v4xL2Enc3X6aM",
                             language: 'English'
@@ -36,8 +42,15 @@ class Heatmap extends Component {
                         center={this.state.center}
                         defaultZoom={this.props.zoom}
                         onChildMouseEnter={this.onChildMouseEnter}
-                        onChildMouseLeave={this.onChildMouseLeave}
-                    />
+                        onChildMouseLeave={this.onChildMouseLeave}  
+                        heatmapLibrary
+                        heatmap={this.props.gpsData}            
+                    >
+                        <Pin
+                        lat = {center.lat}
+                        lng = {center.lng}
+                        />
+                    </GoogleMapReact>
                 </div>
             </div>
         )

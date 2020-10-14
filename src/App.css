@@ -4,5 +4,9 @@
 
 html, body, #root {
   height: 100%;
-  overflow: hidden;
+}
+
+.router-container{
+  padding-top: 60px;
+  height: 100%;
 }
