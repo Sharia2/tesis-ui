@@ -39,7 +39,6 @@ function App() {
       Object.keys(response).forEach(key => {
         response[key].pinData = response[key].heatmapData[response[key].heatmapData.length - 1]
       })
-      console.log(response);
       setData(response)
     });
   }, [])
