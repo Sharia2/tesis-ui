@@ -7,16 +7,16 @@ import "./Heatmap.scss"
 
 class Heatmap extends Component {
     state = {
-        active: 0,
+        active: "heatmap",
         center: { lat: 40.73, lng: -73.93 },
     };
     static defaultProps = {
         center: { lat: 6.25113, lng: -75.57051166666666 },
         zoom: 16.8
-    };
-    componentDidMount(){
-        const latitud = this.props.gpsData.positions[this.props.gpsData.positions.length -1].lat
-        const longitud = this.props.gpsData.positions[this.props.gpsData.positions.length - 1].lng
+    }; 
+    componentDidMount(){     
+        const latitud = this.props.gpsData[this.props.gpsData.length -1].lat
+        const longitud = this.props.gpsData[this.props.gpsData.length - 1].lng
         this.setState({center: {lat: latitud , lng: longitud}})
     }
     changeActive = (newActive) => { this.setState({ active: newActive }) };
@@ -27,9 +27,8 @@ class Heatmap extends Component {
             <div className="gps-container">
                 <div className="options-container">
                     <div className="options">
-                        <button className={active === 0 ? 'active' : ''} onClick={() => { changeActive(0) }}>Posición</button>
-                        <button className={active === 1 ? 'active' : ''} onClick={() => { changeActive(1) }}>Humedad</button>
-                        <button className={active === 2 ? 'active' : ''} onClick={() => { changeActive(2) }}>Temperatura</button>
+                        <button className={active === "heatmap" ? 'active' : ''} onClick={() => { changeActive("heatmap") }}>Mapa de calor</button>
+                        <button className={active === "pines" ? 'active' : ''} onClick={() => { changeActive("pines") }}>Estado actual</button>
                     </div>
                 </div>
                 <div className="heatmap-container">
@@ -44,7 +43,7 @@ class Heatmap extends Component {
                         onChildMouseEnter={this.onChildMouseEnter}
                         onChildMouseLeave={this.onChildMouseLeave}  
                         heatmapLibrary
-                        heatmap={this.props.gpsData}            
+                        heatmap={this.props.gpsData[active]}            
                     >
                         <Pin
                         lat = {center.lat}

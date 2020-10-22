@@ -7,31 +7,40 @@ function App() {
   const [data, setData] = useState({});
   useEffect(() => {
     fetch("https://deploytesis.herokuapp.com/medicion").then(response => response.json()).then(response => {
-      if (Array.isArray(response)) {
-        const positions = response.map(element => {
+      Object.keys(response).forEach(key => {        
+        response[key] = { 
+          heatmapData : response[key].map(element => {
+          // procesamiento coordenadas 
           const latitud1 = Number(element.latitud.split('-')[0])
           const latitud2 = Number(element.latitud.split('-')[1])
           const lat = latitud1 + latitud2 / 60
           const longitud1 = Number(element.longitud.split('-')[0])
           const longitud2 = Number(element.longitud.split('-')[1])
-          const lng = (longitud1 + longitud2 / 60) * -1
+          const lng = (longitud1 + longitud2 / 60) * -1  
+          // procesamiento fecha 
+          const [dia , mes, año, hora ] = element.fecha.split("-")          
+          const fecha = new Date(`${mes}-${dia}-${año}-${hora}`)   
+          fecha.setHours(fecha.getHours()-5) 
+          // procesamiento temperatura y humedad 
+          const temperaturaAmbiente = Number(element.temperaturaAmbiente) / 10
+          const humedad = Number(element.humedad) / 10
+          const temperaturaCorporal = Number(element.temperaturaCorporal) / 10
           return {
             lat,
             lng,
+            fecha, 
+            temperaturaAmbiente,
+            temperaturaCorporal,
+            humedad,
+            id : element.id
           }
-        })
-        setData({
-          rawData: response,
-          gpsData: {
-            positions,
-            options: {
-              radius: 20,
-              opacity: 1
-            }
-            
-          }
-        })
-      }
+        })}
+      } );
+      Object.keys(response).forEach(key => {
+        response[key].pinData = response[key].heatmapData[response[key].heatmapData.length - 1]
+      })
+      console.log(response);
+      setData(response)
     });
   }, [])
   return (
@@ -44,7 +53,7 @@ function App() {
         </Route>
           <Route path="/GPS">
             <Heatmap
-              gpsData={data.gpsData}
+              gpsData={data}
             />
           </Route>
           <Route path="/">
