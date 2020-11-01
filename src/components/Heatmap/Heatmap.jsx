@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Select } from 'antd';
 import GoogleMapReact from 'google-map-react';
 import { Pin } from "../index"
 import "./Heatmap.scss"
@@ -16,28 +17,34 @@ class Heatmap extends Component {
         selectedId: null
     };
     // componentDidMount() {
-    //     const { gpsData } = this.props
-    //     const selectedId = Object.keys(gpsData)[0]
-    //     console.log(Object.keys(gpsData));
-    //     this.setState({ selectedId })
-    // }
-    changeActive = (newActive) => { this.setState({ active: newActive, selectedId: null }) };
-    onChildMouseEnter = (num, childProps) => { this.setState({ pinInfoProps: childProps, hover: true }) }
-    onChildMouseLeave = (num, childProps) => { this.setState({ pinInfoProps: {}, hover: false }) }
-
-    render() {
-        const { gpsData } = this.props
-        const { active, center, pinInfoProps, hover, selectedId, defaultHeatmapData } = this.state
-        const { changeActive, onChildMouseEnter, onChildMouseLeave } = this
+        //     const { gpsData } = this.props
+        //     const selectedId = Object.keys(gpsData)[0]
+        //     console.log(Object.keys(gpsData));
+        //     this.setState({ selectedId })
+        // }
+        handleDropdownChange = (newId) => {this.setState({selectedId:newId})};
+        changeActive = (newActive) => { this.setState({ active: newActive, selectedId: null }) };
+        onChildMouseEnter = (num, childProps) => { this.setState({ pinInfoProps: childProps, hover: true }) }
+        onChildMouseLeave = (num, childProps) => { this.setState({ pinInfoProps: {}, hover: false }) }
+        
+        render() {
+            const { gpsData } = this.props
+            const { active, center, pinInfoProps, hover, selectedId, defaultHeatmapData } = this.state
+            const { changeActive, onChildMouseEnter, onChildMouseLeave } = this       
+            const { Option } = Select
         const selectedHeatmapData = selectedId ? gpsData[selectedId].heatmapData : defaultHeatmapData
         return (
             <div className="gps-container">
                 <div className="options-container">
                     <div className="options">
                         <button className={active === "pines" ? 'active' : ''} onClick={() => { changeActive("pines") }}>Estado actual</button>
-                        <button className={active === "heatmap" ? 'active' : ''} onClick={() => { changeActive("heatmap") }}>Mapa de calor</button>
-                        <button onClick={() => this.setState({ selectedId: '103' })}> select 102 </button>
-                        <button onClick={() => this.setState({ selectedId: null })}> select default </button>
+                        <button className={active === "heatmap" ? 'active' : ''} onClick={() => { changeActive("heatmap") }}>Mapa de calor</button>                        
+                        {active === "heatmap" && <div>
+                            <Select placeholder="Seleccione un ID" value={selectedId} onChange={this.handleDropdownChange}>  
+                                {Object.keys(gpsData).map(id =>
+                                    <Option value = {id} placeholder="Seleccione un ID" >{id}</Option>)}
+                            </Select>
+                        </div>}
                     </div>
                 </div>
                 <div className="heatmap-container">
@@ -54,8 +61,8 @@ class Heatmap extends Component {
                         onChildMouseLeave={onChildMouseLeave}
                         heatmap={selectedHeatmapData}
                         heatmapLibrary
-                    >
-                        {Object.keys(gpsData).map(id =>
+                    >                        
+                        {active === "pines" && Object.keys(gpsData).map(id =>
                             <Pin
                                 {...gpsData[id].pinData}
                             />)}
