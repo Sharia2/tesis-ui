@@ -64,7 +64,6 @@ class Heatmap extends Component {
                         {hover ? <PinInfo {...pinInfoProps} /> : null}
                     </GoogleMapReact>
                 </div>
-
             </div>
         )
     }
