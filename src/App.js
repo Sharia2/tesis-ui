@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import { Nav, Footer, Home, Heatmap } from "./components"
+import { Nav, Footer, Home, Heatmap, Data } from "./components"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
 function App() {
@@ -58,7 +58,9 @@ function App() {
       <div className="router-container">
         <Switch>
           <Route path="/Data">
-            Data
+            <Data
+              data={data}
+            />
         </Route>
           <Route path="/GPS">
             <Heatmap
