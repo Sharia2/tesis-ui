@@ -15,7 +15,6 @@ const Pin = ({ temperaturaAmbiente, temperaturaCorporal, humedad, id}) => {
         puntos++
     }
     const color = puntos===0 ? "green" : puntos===1 ? "orange" : "red" ;
-    console.log(puntos)
     return(
         <div>
             <FontAwesomeIcon icon={faMapPin}  className="pin-container" style={{color}}/>

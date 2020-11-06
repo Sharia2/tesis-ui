@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Select } from 'antd';
+import { Select, Modal, Button } from 'antd';
 import GoogleMapReact from 'google-map-react';
 import { Pin } from "../index"
 import "./Heatmap.scss"
@@ -14,22 +14,36 @@ class Heatmap extends Component {
         defaultHeatmapData: { positions: [], options: { opacity: 0, radius: 0 } },
         pinInfoProps: {},
         hover: false,
-        selectedId: null
+        selectedId: null,
+        visible: true
     };
 
     handleDropdownChange = (newId) => { this.setState({ selectedId: newId }) };
     changeActive = (newActive) => { this.setState({ active: newActive, selectedId: null }) };
-    onChildMouseEnter = (num, childProps) => { this.setState({ pinInfoProps: childProps, hover: true }) }
-    onChildMouseLeave = (num, childProps) => { this.setState({ pinInfoProps: {}, hover: false }) }
+    onChildMouseEnter = (num, childProps) => { this.setState({ pinInfoProps: childProps, hover: true }) };
+    onChildMouseLeave = (num, childProps) => { this.setState({ pinInfoProps: {}, hover: false }) };
+    handleOk = () => {this.setState({ visible:false })};
 
     render() {
         const { gpsData } = this.props
-        const { active, center, pinInfoProps, hover, selectedId, defaultHeatmapData } = this.state
-        const { changeActive, onChildMouseEnter, onChildMouseLeave } = this
+        const { active, center, pinInfoProps, hover, selectedId, defaultHeatmapData, visible } = this.state
+        const { changeActive, onChildMouseEnter, onChildMouseLeave, handleOk } = this
         const { Option } = Select
         const selectedHeatmapData = selectedId ? gpsData[selectedId].heatmapData : defaultHeatmapData
         return (
             <div className="gps-container">
+                <Modal
+                    visible={visible}
+                    title="Información"
+                    onCancel={handleOk}
+                    footer={[
+                    <Button onClick={handleOk}>
+                        Cerrar
+                    </Button>
+                    ]}
+                >
+                    <p>kjdxnsaklnaklcnaskl</p>
+                </Modal>
                 <div className="options-container">
                     <div className="options">
                         <button className={active === "pines" ? 'active' : ''} onClick={() => { changeActive("pines") }}>Estado actual</button>
