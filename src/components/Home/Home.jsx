@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Stress } from "../index"
+import { Stress, Solution} from "../index"
 import ItemsCarousel from 'react-items-carousel';
 import { Button } from 'antd';
 import 'antd/dist/antd.css';
@@ -27,9 +27,9 @@ class Home extends Component {
     getInfo = (index) => {
         const { activeItemIndex} = this.state
         if (activeItemIndex === 1) {
-            return <Stress />
+            return <Stress/>
         } else if(activeItemIndex === 3){
-            return "Informacion2"
+            return <Solution/>
         } else {
             return "Informacion3"
         }

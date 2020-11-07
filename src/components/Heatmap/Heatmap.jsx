@@ -42,7 +42,8 @@ class Heatmap extends Component {
                     </Button>
                     ]}
                 >
-                    <p>kjdxnsaklnaklcnaskl</p>
+                    <p>A continuación encontratrá dos opciones con la siguiente funcionalida</p>
+                    <strong>Estado actual</strong><p> Te permite visualizar la posición actual de todos los bovinos que hay hasta este momento en la base de datos</p>
                 </Modal>
                 <div className="options-container">
                     <div className="options">

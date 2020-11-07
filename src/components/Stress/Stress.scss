@@ -2,8 +2,6 @@
 .image2 {grid-area: image2;}
 .image3 {grid-area: image3;}
 .image4 {grid-area: image4;}
-.column1 {grid-area: column1; max-width:50%}
-.column2 {grid-area: column2; max-width:50%}
 
 .stress-container {
   display: grid;
@@ -12,14 +10,14 @@
   padding: 20px;
 }
 
-.image-container {
+.image-container-stress {
   display: grid;
   grid-gap: 20px;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: 'image1 image2'
-    'image3 image4';
+  'image3 image4';
     img{
-    width: 100%;
+    max-width: 100%;
   }
 }
 
