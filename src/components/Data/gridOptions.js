@@ -4,9 +4,10 @@ const gridOptions = {
 
     columnDefs: [
         { headerName: 'Número de identificación', field: 'pinData.id', cellRenderer: 'agGroupCellRenderer'},
-        { headerName: 'Temperatura Corpolar Actual', field: 'pinData.temperaturaCorporal' },
-        { headerName: 'Temperatura Ambiente Actual', field: 'pinData.temperaturaAmbiente' },
+        { headerName: 'Temperatura Corpolar Actual', field: 'pinData.temperaturaCorporal'},
+        { headerName: 'Temperatura Ambiente Actual', field: 'pinData.temperaturaAmbiente'},
         { headerName: 'Humedad Actual', field: 'pinData.humedad' },
+        { headerName: 'Estres térmico', cellRenderer: 'indicatorCellRenderer' },        
         { headerName: 'Fecha', field: 'pinData.fecha', 
             valueFormatter: function(params){
                 const result = new Date(params.value);

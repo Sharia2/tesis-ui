@@ -3,6 +3,7 @@ import {  Modal, Button } from 'antd';
 import { AgGridReact } from 'ag-grid-react';
 import "./Data.scss"
 import gridOptions from "./gridOptions"
+import IndicatorCellRenderer from "../IndicatorCellRenderer/IndicatorCellRenderer"
 
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
@@ -47,6 +48,7 @@ class Data extends Component {
                     enableRangeSelection={enableRangeSelection}
                     enableCharts={enableCharts}
                     animateRows={animateRows}
+                    frameworkComponents={{indicatorCellRenderer : IndicatorCellRenderer}}
                 />
             </div>
         )
