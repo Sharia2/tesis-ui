@@ -1,12 +1,14 @@
+import IndicatorCellRenderer from "../IndicatorCellRenderer/IndicatorCellRenderer"
+
 const gridOptions = {
     masterDetail: true,
     animateRows: true,
 
     columnDefs: [
         { headerName: 'Número de identificación', field: 'pinData.id', cellRenderer: 'agGroupCellRenderer'},
-        { headerName: 'Temperatura Corpolar Actual', field: 'pinData.temperaturaCorporal'},
-        { headerName: 'Temperatura Ambiente Actual', field: 'pinData.temperaturaAmbiente'},
-        { headerName: 'Humedad Actual', field: 'pinData.humedad' },
+        { headerName: 'Temperatura Corpolar Actual °C', field: 'pinData.temperaturaCorporal', cellRenderer:'ledCellRenderer'},
+        { headerName: 'Temperatura Ambiente Actual °C ', field: 'pinData.temperaturaAmbiente'},
+        { headerName: 'Humedad Actual %', field: 'pinData.humedad' },
         { headerName: 'Estres térmico', cellRenderer: 'indicatorCellRenderer' },        
         { headerName: 'Fecha', field: 'pinData.fecha', 
             valueFormatter: function(params){
@@ -32,10 +34,12 @@ const gridOptions = {
 
     detailCellRendererParams: {
         detailGridOptions: {
+            frameworkComponents:{ indicatorCellRenderer: IndicatorCellRenderer},
             columnDefs: [
-                { headerName: 'Temperatura Corpolar', field: 'temperaturaCorporal' },
-                { headerName: 'Temperatura Ambiente', field: 'temperaturaAmbiente' },
-                { headerName: 'Humedad', field: 'humedad' },
+                { headerName: 'Temperatura Corpolar °C', field: 'temperaturaCorporal' },
+                { headerName: 'Temperatura Ambiente °C', field: 'temperaturaAmbiente' },
+                { headerName: 'Humedad %', field: 'humedad' },
+                { headerName: 'Estres térmico', cellRenderer: 'indicatorCellRenderer' },
                 {
                     headerName: 'Fecha', field: 'fecha',
                     valueFormatter: function (params) {

@@ -4,6 +4,7 @@ import { AgGridReact } from 'ag-grid-react';
 import "./Data.scss"
 import gridOptions from "./gridOptions"
 import IndicatorCellRenderer from "../IndicatorCellRenderer/IndicatorCellRenderer"
+import LedCellRenderer from "../LedCellRenderer/LedCellRenderer"
 
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
@@ -23,7 +24,6 @@ class Data extends Component {
         const {data} = this.props;
         const { masterDetail, columnDefs, defaultColDef, detailCellRendererParams, getDetailRowData, enableRangeSelection, enableCharts, animateRows} = gridOptions
         const dataArray = Object.values(data);
-        console.log(masterDetail, columnDefs, defaultColDef, detailCellRendererParams, getDetailRowData, dataArray);
         return (
             <div className="ag-theme-alpine" style={{ width: '100%', height: '100%' }}>
                 <Modal
@@ -48,7 +48,7 @@ class Data extends Component {
                     enableRangeSelection={enableRangeSelection}
                     enableCharts={enableCharts}
                     animateRows={animateRows}
-                    frameworkComponents={{indicatorCellRenderer : IndicatorCellRenderer}}
+                    frameworkComponents={{indicatorCellRenderer : IndicatorCellRenderer, ledCellRenderer : LedCellRenderer}}
                 />
             </div>
         )
