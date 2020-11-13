@@ -22,7 +22,7 @@ function App() {
               const [dia, mes, año, hora] = element.fecha.split("-")
               const fecha = new Date(`${mes}-${dia}-${año}-${hora}`)
               fecha.setHours(fecha.getHours() - 5)
-              // procesamiento temperatura y humedad 
+              // procesamiento temperaturas y humedad 
               const temperaturaAmbiente = Number(element.temperaturaAmbiente) / 10
               const humedad = Number(element.humedad) / 10
               const temperaturaCorporal = Number(element.temperaturaCorporal) / 10

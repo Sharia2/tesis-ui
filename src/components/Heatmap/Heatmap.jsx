@@ -26,6 +26,7 @@ class Heatmap extends Component {
 
     render() {
         const { gpsData } = this.props
+        console.log(gpsData)
         const { active, center, pinInfoProps, hover, selectedId, defaultHeatmapData, visible } = this.state
         const { changeActive, onChildMouseEnter, onChildMouseLeave, handleOk } = this
         const { Option } = Select
