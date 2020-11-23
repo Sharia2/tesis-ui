@@ -1,8 +1,8 @@
 import React  from "react";
 import image1 from "../../assets/stress1.jpg"
 import image2 from "../../assets/stress2.jpg"
-import image3 from "../../assets/stress3.jpg"
-import image4 from "../../assets/stress4.jpg"
+// import image3 from "../../assets/stress3.jpg"
+// import image4 from "../../assets/stress4.jpg"
 import "./Stress.scss"
 
 
@@ -19,8 +19,8 @@ const Info1 = () => (
         <div className="image-container-stress">
             <div className="image1"><img src={image1} alt="this images is not found" /></div>
             <div className="image2"><img src={image2} alt="this images is not found" /></div>
-            <div className="image3"><img src={image3} alt="this images is not found" /></div>
-            <div className="image4"><img src={image4} alt="this images is not found" /></div>
+            {/* <div className="image3"><img src={image3} alt="this images is not found" /></div>
+            <div className="image4"><img src={image4} alt="this images is not found" /></div> */}
         </div>
     </div>
 );

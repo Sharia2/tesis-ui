@@ -1,9 +1,9 @@
 .image5 {grid-area: image5;}
-.image6 {grid-area: image6;}
+// .image6 {grid-area: image6;}
 
 .solution-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-gap: 20px;
     padding: 20px;
 }
@@ -12,16 +12,16 @@
     display: grid;
     grid-gap: 20px;
     grid-template-columns: 1fr;
-    grid-template-areas: 'image5'
-        'image6';
+    grid-template-areas: 'image5';
     img{
     width: 400px;
     }
 }
 
-.information-container {
+.information-solution-container {
     width: 100%;
     height: 100%;
+    padding: 0 30px;
     & div {
     text-align: center;
     }

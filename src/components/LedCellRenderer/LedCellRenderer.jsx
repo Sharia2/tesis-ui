@@ -14,8 +14,8 @@ class LedCellRenderer extends Component {
         }
         return (
             <span>
-                {value}
                 <FontAwesomeIcon icon={faCircle}  style={{ color }} className="led"/>
+                {value}
             </span>
         )
     }
