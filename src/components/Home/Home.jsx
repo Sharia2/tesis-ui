@@ -1,10 +1,10 @@
 import React, { Component } from "react"
-import { Stress, Solution} from "../index"
+import { Stress, Solution, Introduction} from "../index"
 import ItemsCarousel from 'react-items-carousel';
 import { Button } from 'antd';
 import 'antd/dist/antd.css';
-import { RightOutlined, LeftOutlined} from '@ant-design/icons'
 import "./Home.scss"
+import { RightOutlined, LeftOutlined} from '@ant-design/icons'
 import image1 from "../../assets/1.jpg"
 import image2 from "../../assets/2.jpg"
 import image3 from "../../assets/3.jpg"
@@ -27,11 +27,11 @@ class Home extends Component {
     getInfo = (index) => {
         const { activeItemIndex} = this.state
         if (activeItemIndex === 1) {
-            return <Stress/>
+            return <Introduction />
         } else if(activeItemIndex === 3){
-            return <Solution/>
+            return <Stress />
         } else if(activeItemIndex === 5){
-            return "Informacion3"
+            return <Solution />
         } else {
             return "Informacion4"
         }

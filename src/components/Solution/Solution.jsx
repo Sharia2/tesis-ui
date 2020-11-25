@@ -13,9 +13,6 @@ const Info2 = () => (
         </div>
         <div className="image-container-solution">
             <div className="image5"><img src={image5} alt="this images is not found" /></div>
-            {/* <div className="image6"><img src={image6} alt="this images is not found" /></div> */}
-            {/* <div className="image7"><img src={image7} alt="this images is not found" /></div>
-            <div className="image8"><img src={image8} alt="this images is not found" /></div> */}
         </div>
     </div>
 );
