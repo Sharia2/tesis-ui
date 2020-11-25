@@ -1,5 +1,4 @@
 import React from "react";
-import image1 from "../../assets/stress1.jpg"
 import "./Introduction.scss"
 
 
@@ -16,7 +15,6 @@ const Introduction = () => (
             <p className="body">En el presente trabajo se desarrolló un sistema que permite almacenar en una base de datos la información recolectada por los sensores del dispositivo: temperatura del bovino, posición, humedad y temperatura del ambiente. Estas permiten determinar el estado del hato bovino y como se ve afectado su comportamiento al transcurrir el día; además, con ayuda de mapas de calor se pueden identificar los lugares del terreno mas frecuentados por el ganado y así tomar decisiones respecto a zonas de alimentación o modificación de estas.</p>
         </div>
         <div className="image-container-introduction">
-            {/* <div className="image1"><img src={image1} alt="this images is not found" /></div> */}
         </div>
     </div>
 );
