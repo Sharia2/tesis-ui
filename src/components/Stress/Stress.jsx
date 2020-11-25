@@ -1,8 +1,5 @@
 import React  from "react";
 import image1 from "../../assets/stress1.jpg"
-import image2 from "../../assets/stress2.jpg"
-// import image3 from "../../assets/stress3.jpg"
-// import image4 from "../../assets/stress4.jpg"
 import "./Stress.scss"
 
 
