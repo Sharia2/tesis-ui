@@ -12,7 +12,7 @@ import image4 from "../../assets/4.jpg"
 import image5 from "../../assets/5.jpg"
 import image6 from "../../assets/6.jpg"
 
-const images = [image1, image2, image3, image4, image5, image6, image5, image6];
+const images = [image1, image2, image3, image4];
 const finalImages = images.map(
     (image) =>
         <div className="carousel-image">
@@ -22,15 +22,15 @@ const finalImages = images.map(
 
 class Home extends Component {
     state = {
-        activeItemIndex: 1,
+        activeItemIndex: 0,
     };
     getInfo = (index) => {
         const { activeItemIndex} = this.state
-        if (activeItemIndex === 1) {
+        if (activeItemIndex === 0) {
             return <Introduction />
-        } else if(activeItemIndex === 3){
+        } else if(activeItemIndex === 1){
             return <Stress />
-        } else if(activeItemIndex === 5){
+        } else if(activeItemIndex === 2){
             return <Solution />
         } else {
             return "Informacion4"
@@ -50,9 +50,9 @@ class Home extends Component {
                 <div className="carousel-container">
                     <ItemsCarousel
                         //infiniteLoop
-                        numberOfCards={2}
+                        numberOfCards={1}
                         gutter={12}
-                        slidesToScroll={2}
+                        slidesToScroll={1}
 
                         requestToChangeActive={changeActiveItem}
                         activeItemIndex={activeItemIndex}
