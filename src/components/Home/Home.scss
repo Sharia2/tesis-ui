@@ -8,7 +8,7 @@
     img{
         height: 250px;
         width: 100%;
-        padding: 0px 18%;
+        padding: 0px 12%;
         border-radius: 12%;
     }
 }
@@ -16,7 +16,7 @@
 .carousel-container{
     max-width: 100%;
     padding: 20px 5px;
-    background-color: white;
-    // border-bottom: 1px solid #f0f0f0;
+    background: url("../../assets/backGround.jpeg");
+    background-repeat: repeat ;
 }
 
