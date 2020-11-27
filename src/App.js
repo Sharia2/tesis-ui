@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
+import { Spin } from 'antd';
 import { Nav, Footer, Home, Heatmap, Data } from "./components"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
@@ -50,7 +51,11 @@ function App() {
     });
   }, [])
   if(!data){
-    return <p>Loading</p>
+    return (
+      <div className="spin-container">
+        <Spin size="large" />
+      </div>
+    )
   }
   return (
     <Router>

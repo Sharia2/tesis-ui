@@ -26,11 +26,11 @@ class Home extends Component {
     getInfo = (index) => {
         const { activeItemIndex} = this.state
         if (activeItemIndex === 0) {
-            return <Introduction />
+            return <Solution />
         } else if(activeItemIndex === 1){
             return <Stress />
         } else if(activeItemIndex === 2){
-            return <Solution />
+            return <Introduction /> 
         } else {
             return "Informacion4"
         }
