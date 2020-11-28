@@ -1,6 +1,5 @@
 import React from "react";
 import { Row, Col, Card } from 'antd';
-import { RiseOutlined } from '@ant-design/icons';
 import Meta from "antd/lib/card/Meta";
 import image1 from "../../assets/introduction1.jpg"
 import "./Introduction.scss"
