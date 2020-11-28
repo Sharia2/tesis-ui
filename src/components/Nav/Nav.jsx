@@ -18,10 +18,10 @@ const Nav = () => {
         </div>
         <div className="buttons">
             <Link to="data">
-                <button className={path==="/data"? "active" : ''}>Data</button>
+                <button className={path==="/data"? "active" : ''}>Datos</button>
             </Link>
             <Link to="gps">
-                    <button className={path === "/gps" ? "active" : ''}>GPS</button>
+                    <button className={path === "/gps" ? "active" : ''}>Mapa</button>
             </Link>
         </div>
     </div>

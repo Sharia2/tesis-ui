@@ -28,9 +28,9 @@ class Home extends Component {
         if (activeItemIndex === 0) {
             return <Solution />
         } else if(activeItemIndex === 1){
-            return <Stress />
+            return <Introduction />
         } else if(activeItemIndex === 2){
-            return <Introduction /> 
+            return <Stress /> 
         } else {
             return "Informacion4"
         }

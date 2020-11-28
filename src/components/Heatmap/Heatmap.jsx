@@ -10,7 +10,7 @@ import PinInfo from "../PinInfo/PinInfo";
 class Heatmap extends Component {
     state = {
         active: "pines",
-        center: { lat: 6.25113, lng: -75.57051166666666 },
+        center: { lat: 6.193621, lng: -75.593366666 },
         defaultHeatmapData: { positions: [], options: { opacity: 0, radius: 0 } },
         pinInfoProps: {},
         hover: false,
@@ -68,7 +68,7 @@ class Heatmap extends Component {
                         }}
                         defaultCenter={center}
                         center={center}
-                        defaultZoom={16}
+                        defaultZoom={14}
                         onChildMouseEnter={onChildMouseEnter}
                         onChildMouseLeave={onChildMouseLeave}
                         heatmap={selectedHeatmapData}

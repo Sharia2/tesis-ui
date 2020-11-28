@@ -1,18 +1,69 @@
 import React from "react";
-import image5 from "../../assets/3.jpg"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faThermometerThreeQuarters, faCloudSun } from '@fortawesome/free-solid-svg-icons';
+import { Row, Col, Card } from 'antd';
+import { CloudSyncOutlined, BarChartOutlined, EnvironmentOutlined, FileTextOutlined } from '@ant-design/icons';
+import Meta from "antd/lib/card/Meta";
+import image1 from "../../assets/solution1.jpeg"
 import "./Solution.scss"
 
 
 const Info2 = () => (
-    <div className="solution-container">
-        <div className="information-solution-container">
-            <p className="title">ESTRÉS TÉRMICO</p>
-            <p className="body">El término “estrés térmico” se utiliza para describir la situación que les ocurre a los animales cuando el calor generado por su organismo, sumado al calor absorbido del ambiente, es mayor que su capacidad para disiparlo.</p>
-            <p className="body">La estabilidad de la temperatura corporal se basa en las permutas de calor con el medio ambiente, que, a su vez, dependen de mecanismos psiológicos, comportamentales y metabólicos.</p>
-            <p className="body">El ambiente térmico representa un factor de restricción de la ciencia productiva, sobre todo  en  los sistemas  intensivos,  donde los animales frecuentemente no pueden manifestar determinadas respuestas comporta-mentales adaptativas.</p>
-        </div>
-        <div className="image-container-solution">
-            <div className="image5"><img src={image5} alt="this images is not found" /></div>
+    <div className="cards-wrapper-solution">
+        <Row>
+            <Col span={14} style={{ padding: '10px 40px 0 20px' }}>
+                <Card className='cards-up-solution'>
+                    <p>Dispositivo diseñado para medir variables fisiológicas y ambientales de un bovino. </p>
+                </Card>
+                <Row>
+                    <Card className='cards-up-solution'>
+                        <p>Almacenamiento y visualizacion de datos adquiridos generando alarmas ante posibles anomalías.</p>
+                    </Card>
+                </Row>
+            </Col>
+            <Col span={10}>
+                <Card cover={<img src={image1} alt="this images is not found" className="image" ></img>} className="">
+                    <Meta title="Dispositivo" />
+                </Card>
+            </Col>
+        </Row>
+        <div className="site-card-wrapper">
+            <Row gutter={16}>
+                <Col span={8}>
+                    <Card title={<FontAwesomeIcon icon={faCloudSun} className="icons" style={{ color:'orange' }} />} bordered={false} className="cards-down-solution">
+                    <p>Sensor utilizado para la medición de  temperatura y humedad relativa del ambiente DHT22</p>
+                    </Card>
+                </Col>
+                <Col span={8}>
+                    <Card title={<FontAwesomeIcon icon={faThermometerThreeQuarters} className="icons" style={{ color: 'purple' }} />} bordered={false} className="cards-down-solution">
+                        <p>Medición temperatura corporal LM75A</p>
+                    </Card>
+                </Col>
+                <Col span={8}>
+                    <Card title={< CloudSyncOutlined className="icons" style={{ color: "blue" }} />} bordered={false} className="cards-down-solution">
+                        <p>Conexión base de datos</p>
+                        <p>Software Heroku -- MongoDB</p>
+                        <p>Parte física M95</p>
+                    </Card>
+                </Col>
+            </Row>
+            <Row gutter={16}>
+                <Col span={8}>
+                    <Card title={<FileTextOutlined className="icons" style={{ color: "black" }} />} bordered={false} className="cards-down-solution">
+                        <p>Almacenamiento y visualizacion de datos recolectados</p>
+                    </Card>
+                </Col>
+                <Col span={8}>
+                    <Card title={<BarChartOutlined className="icons" style={{ color: "green" }} />} bordered={false} className="cards-down-solution">
+                        <p>Posibilidad de generar diferentes tipos de gráficas según la necesidad</p>
+                    </Card>
+                </Col>
+                <Col span={8}>
+                    <Card title={<EnvironmentOutlined className="icons" style={{ color: "red" }} />} bordered={false} className="cards-down-solution">
+                        <p>Visualización de ubicación y variables de la última medición </p>
+                    </Card>
+                </Col>
+            </Row>
         </div>
     </div>
 );

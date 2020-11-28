@@ -5,16 +5,16 @@ import "./Pin.scss"
 
 const Pin = ({ temperaturaAmbiente, temperaturaCorporal, humedad, id}) => {
     let puntos = 0
-    if (temperaturaAmbiente < 25 || temperaturaAmbiente > 30){
+    if (temperaturaAmbiente < 17 || temperaturaAmbiente > 28){
         puntos++
     }
-    if (temperaturaCorporal < 38 || temperaturaCorporal > 40){
+    if (temperaturaCorporal < 36 || temperaturaCorporal > 37){
         puntos++
     }
-    if (humedad < 30 || humedad > 50){
+    if (humedad < 50 || humedad > 70){
         puntos++
     }
-    const color = puntos===0 ? "green" : puntos===1 ? "orange" : "red" ;
+    const color = puntos === 0 ? "#40AB2A" : puntos===1 ? "orange" : "red" ;
     return(
         <div>
             <FontAwesomeIcon icon={faMapPin}  className="pin-container" style={{color}}/>

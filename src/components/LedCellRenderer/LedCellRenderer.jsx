@@ -7,9 +7,9 @@ class LedCellRenderer extends Component {
     render() {
         const {  value } = this.props
         let color = '#E13030';
-        if (value>38 && value<39.5) {
-            color = "#38D234";
-        } else if ( (value>37.5 && value<38) || (value>39.5 && value<40.2)) {
+        if (value>36 && value<37) {
+            color = "#40AB2A";
+        } else if ( (value>35.3 && value<36) || (value>37 && value<37.7)) {
             color = '#FFD933'
         }
         return (

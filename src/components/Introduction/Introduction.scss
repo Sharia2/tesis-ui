@@ -2,7 +2,7 @@
     font-size: 20px;
 }
 
-.cards-wrapper {
+.cards-wrapper-introduction {
     padding: 30px 0;
     background: #ffffff;
     width: 90%;
@@ -19,12 +19,12 @@
     width: 100%;
 }
 
-.cards-up {
+.cards-up-introduction {
     width: 90%;
     height: 90px;
     box-shadow: 3px 3px 12px #e5e5f1;
     border: 1px solid #e5e5f1;
-    margin-top: 20px;
+    margin-top: 10px;
 
     p {
         margin: auto;
@@ -34,6 +34,9 @@
 .cards-down {
     transition: all 0.3s;
     height: 300px;
+    border: 1px solid #e5e5f1;
+    box-shadow: 3px 3px 12px #e5e5f1;
+
     p {
         opacity: 0;
         transition: all 0.3s;
