@@ -43,7 +43,7 @@ class Heatmap extends Component {
                     </Button>
                     ]}
                 >
-                    <p>A continuación encontratrá las siguientes opciones</p>
+                    <p>A continuación encontrará las siguientes opciones</p>
                     <strong>Estado actual</strong><p> Te permite visualizar la posición actual de todos los bovinos que hay registrados en la base de datos por medio de pines, además al poner el cursor sobre cualquiera de estos pines se muestra la informacion de este en tiempo real</p>
                     <strong>Mapa de calor</strong><p> En esta opción es necesario seleccionar por medio del ID el bovino y así poder desplegar el mapa de calor, el cual permite visualizar facilmente los lugares del terreno  mas frecuentados por este</p>
                 </Modal>
