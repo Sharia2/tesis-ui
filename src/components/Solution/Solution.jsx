@@ -69,17 +69,24 @@ const Info2 = () => (
                 </Col>
             </Row>
         </div>
+        <div className="middle-title">
+            <Row>
+                <Col span={24}>
+                    <h1>FUNCIONALIDADES</h1>
+                </Col>
+            </Row>
+        </div>
         <div className="final-cards">
             <Row gutter={10}>
                 <Col span={12}>
                     <Card title="Generar mapas de calor" className="cards-explanation1">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, quasi temporibus? Saepe nemo eveniet quisquam dignissimos eum, incidunt dolor aut quod veniam, vel non ex placeat doloremque unde, tempora quasi?</p>
+                        <p>Podrás visualizar mapas de calor por cada bovino dentro de la base de datos seleccionando el id, identificando los lugares mas frecuentados por el este</p>
                         <img src={image2} alt="this images is not found" className="image" ></img>
                     </Card>
                 </Col>
                 <Col span={12}>
                     <Card title="Ubicar posición actual"  className="cards-explanation2">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas odio ea enim ullam fuga quos quam tenetur aspernatur. Vel, nostrum accusantium maxime possimus alias distinctio tempora magnam mollitia dicta id.</p>
+                        <p>Por medio de pines se podrá ubicar la última posición del bovino dentro del terreno, además depediendo del color determinar el estado del animal. </p>
                         <img src={image3} alt="this images is not found" className="image" ></img>
                     </Card>
                 </Col>
@@ -88,14 +95,14 @@ const Info2 = () => (
         <div className="final-cards">
             <Row gutter={10}>
                 <Col span={12}>
-                    <Card title="Consultar los datos" className="cards-explanation2">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas odio ea enim ullam fuga quos quam tenetur aspernatur. Vel, nostrum accusantium maxime possimus alias distinctio tempora magnam mollitia dicta id.</p>
+                    <Card title="Consultar los datos" className="cards-explanation3">
+                        <p>Con ayuda de una tabla se agrupa la información recolectada por bovino, permitiendo mejor representación de los datos  </p>
                         <img src={image4} alt="this images is not found" className="image" ></img>
                     </Card>
                 </Col>
                 <Col span={12}>
-                    <Card title="Generación de gráficas" className="cards-explanation2">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas odio ea enim ullam fuga quos quam tenetur aspernatur. Vel, nostrum accusantium maxime possimus alias distinctio tempora magnam mollitia dicta id.</p>
+                    <Card title="Generación de gráficas" className="cards-explanation3">
+                        <p>Teniendo en cuenta los datos que desee comparar, podrás generar gráficas seleccionando los valores deseados</p>
                         <img src={image5} alt="this images is not found" className="image" ></img>
                     </Card>
                 </Col>
