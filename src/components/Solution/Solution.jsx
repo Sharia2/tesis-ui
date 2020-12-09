@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faThermometerThreeQuarters, faCloudSun, faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons';
+import { faThermometerThreeQuarters, faCloudSun} from '@fortawesome/free-solid-svg-icons';
 import { Row, Col, Card } from 'antd';
 import { CloudSyncOutlined, BarChartOutlined, EnvironmentOutlined, FileTextOutlined } from '@ant-design/icons';
 import Meta from "antd/lib/card/Meta";
