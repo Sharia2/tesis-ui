@@ -44,12 +44,8 @@ const Info1 = () => (
             </Row>
             <Row>
                 <Col span={24}>
-                    <h3 style={{ marginTop: '20px' }} >Las recomendaciones básicas para disminuir las pérdidas asociadas a estrés por calor
+                    <h3 style={{ margin: '20px  0' }} >Las recomendaciones básicas para disminuir las pérdidas asociadas a estrés por calor
                     son asegurar acceso a fuentes de sombra y agua de calidad, en la medida que esto sea posible.
-                    A su vez se debe evitar el movimiento de la hacienda en los días en los que se esperan altas
-                    temperaturas.
-                    Estas medidas deben extremarse en animales que se encuentren consumiendo festucas
-                    tóxicas o pasturas con elevado nivel de infección por Claviceps purpurea.
                     </h3>
                 </Col>
             </Row>
