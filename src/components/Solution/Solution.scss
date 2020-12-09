@@ -12,9 +12,11 @@
 
 .cards-explanation1{
     transition: all 0.3s;
-    height: 300px;
+    height: 180px;
     border: 1px solid #e5e5f1;
     box-shadow: 3px 3px 12px #e5e5f1;
+    cursor: pointer;
+
 
     img {
         opacity: 0;
@@ -36,9 +38,11 @@
 }
 .cards-explanation2{
     transition: all 0.3s;
-    height: 300px;
+    height: 180px;
     border: 1px solid #e5e5f1;
     box-shadow: 3px 3px 12px #e5e5f1;
+    cursor: pointer;
+
 
     img {
         opacity: 0;
@@ -60,9 +64,11 @@
 
 .cards-explanation3{
     transition: all 0.3s;
-    height: 300px;
+    height: 180px;
     border: 1px solid #e5e5f1;
     box-shadow: 3px 3px 12px #e5e5f1;
+    cursor: pointer;
+
 
     img {
         opacity: 0;
@@ -108,11 +114,6 @@
         margin-bottom: auto;
         display: flex;
     }
-}
-
-.cards-down-solution {
-    // box-shadow: #e5e5f1;
-    // border: 1px solid #e5e5f1;
 }
 
 .ant-card-body {
