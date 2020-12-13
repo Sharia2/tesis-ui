@@ -62,7 +62,7 @@ class Heatmap extends Component {
                 <div className="heatmap-container">
                     <GoogleMapReact
                         bootstrapURLKeys={{
-                            key: "AIzaSyDKqrFi2AW-g2mduIrTL3v4xL2Enc3X6aM",
+                            key: "AIzaSyCEziRdJjYacX9DVfDWsMEPoOI4DcqeQQQ",
                             language: 'English',
                             libraries: ['visualization']
                         }}
