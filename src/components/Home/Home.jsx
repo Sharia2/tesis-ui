@@ -27,9 +27,9 @@ class Home extends Component {
         if (activeItemIndex === 0) {
             return <Solution />
         } else if(activeItemIndex === 1){
-            return <Introduction />
+            return <Stress />
         } else {
-            return <Stress /> 
+            return <Introduction /> 
         } 
     }
     changeActiveItem = (activeItemIndex) => this.setState({ activeItemIndex });
