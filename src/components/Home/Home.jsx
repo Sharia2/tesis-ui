@@ -6,8 +6,8 @@ import 'antd/dist/antd.css';
 import "./Home.scss"
 import { RightOutlined, LeftOutlined} from '@ant-design/icons'
 import image1 from "../../assets/1.png"
-import image2 from "../../assets/2.png"
-import image3 from "../../assets/3.png"
+import image3 from "../../assets/2.png"
+import image2 from "../../assets/3.png"
 
 
 const images = [image1, image2, image3];
